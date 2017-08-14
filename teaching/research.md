@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: F# Publications | The F# Software Foundation
@@ -225,9 +226,11 @@ monadic version, we need to specify evaluation order explicitly. This requires u
 between _call-by-value_ or _call-by-name_ style. The two translations give programs with 
 different semantics, structure and also different types.
 
+
 In this paper, we translate pure code to monadic using an additional operation `malias` 
 that abstracts out the evaluation strategy. The `malias` operation is based on _computational comonads_; 
 we use a categorical framework to specify the laws that are required to hold about the operation.
+
 
 We show two implementations of `malias` for any monad that give _call-by-value_ and 
 _call-by-name_ semantics. Although we do not give _call-by-need_ semantics for any monad, we 
@@ -267,6 +270,20 @@ Many computations can be structured using abstract computation types such as mon
 F# computation expressions answer this question in the affirmative. Unlike the do notation in Haskell, computation expressions are not tied to a single kind of abstraction. They support a wide range of computations, depending on what operations are available. They also provide greater syntactic flexibility leading to a more intuitive syntax, without resorting to full macro-based meta-programming.
 
 We show that computation expressions can structure well-known computations including monoidal list comprehensions, monadic parsers, applicative formlets and asynchronous sequences based on the list monad transformer. We also present typing rules for computation expressions that are capable of capturing all these applications.
+
+
+### [Classes for the Masses](http://www.mlworkshop.org/2016-7.pdf)
+
+Claudio Russo, Matthew Windsor, Don Syme, Rupert Horlick, James Clarke
+_Proceedings of ML 2016_
+
+Type classes are an immensely popular and productive feature of Haskell. They have since been adopted in, 
+and adapted to, numerous other languages, including theorem provers. 
+We show that type classes have a natural and efﬁcient representation in .NET that paves
+the way for the extension of F#, C# and other .NET languages with type classes. 
+Our encoding is type preserving and promises easy and safe cross-language inter-operation. 
+We have extended the open source C# compiler and language service, Roslyn,
+with pervasive support for type classes and have prototyped a more minimalist design for F#
 
 --------------
 
